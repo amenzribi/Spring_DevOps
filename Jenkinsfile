@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    
-
-   
-    
     stages {
         stage('Github Connection') {
             steps {
@@ -13,15 +9,20 @@ pipeline {
             }
         }
 
-
-
         stage('Test Backend') {
             steps {
-                dir('DevOps_Project') {
+                dir('eventsProject') { // Changer le répertoire en 'eventsProject'
                     script {
                         sh 'mvn clean test'
                     }
                 }
             }
-                        
         }
+    }
+
+    post {
+        always {
+            junit 'eventsProject/target/surefire-reports/*.xml' // Chemin correct pour les rapports de test
+        }
+    }
+}
