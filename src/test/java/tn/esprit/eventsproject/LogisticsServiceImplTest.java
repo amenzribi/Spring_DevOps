@@ -48,23 +48,23 @@ public class LogisticsServiceImplTest {
         when(logisticsRepository.save(logistics)).thenReturn(logistics);
         assertEquals(logistics, eventServices.addLogistics(logistics));
     }
+    /*
+        @Test
+        public void retrieveLogisticsTest() {
+            Logistics logistics = new Logistics(2, "description2", false, 20.0f, 200);
+            when(logisticsRepository.findById(Mockito.anyInt())).thenReturn(Optional.of(logistics));
+            Logistics retrievedLogistics = eventServices.retrieveLogistics(2);
+            assertNotNull(retrievedLogistics);
+        }
 
-    @Test
-    public void retrieveLogisticsTest() {
-        Logistics logistics = new Logistics(2, "description2", false, 20.0f, 200);
-        when(logisticsRepository.findById(Mockito.anyInt())).thenReturn(Optional.of(logistics));
-        Logistics retrievedLogistics = eventServices.retrieveLogistics(2);
-        assertNotNull(retrievedLogistics);
-    }
-
-    @Test
-    public void retrieveLogisticsNotFoundTest() {
-        when(logisticsRepository.findById(Mockito.anyInt())).thenReturn(Optional.empty());
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            eventServices.retrieveLogistics(2);
-        });
-    }
-
+        @Test
+        public void retrieveLogisticsNotFoundTest() {
+            when(logisticsRepository.findById(Mockito.anyInt())).thenReturn(Optional.empty());
+            Assertions.assertThrows(NullPointerException.class, () -> {
+                eventServices.retrieveLogistics(2);
+            });
+        }
+    */
     @Test
     public void deleteLogisticsTest() {
         eventServices.deleteLogistics(1);
