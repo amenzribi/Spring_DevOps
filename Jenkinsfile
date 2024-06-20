@@ -21,9 +21,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            junit 'eventsProject/target/surefire-reports/*.xml'
-        }
-    }
+  
 }
