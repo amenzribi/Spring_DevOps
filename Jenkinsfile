@@ -18,15 +18,11 @@ pipeline {
                     }
                 }
             }
-             post {
-        always {
-            junit 'eventsProject/target/surefire-reports/*.xml' // Chemin correct pour les rapports de test
+            post {
+                always {
+                    junit 'eventsProject/target/surefire-reports/*.xml'
+                }
+            }
         }
     }
-
-        }
-        
-    }
-
-  
 }
