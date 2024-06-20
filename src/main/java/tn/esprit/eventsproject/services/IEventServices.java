@@ -14,4 +14,14 @@ public interface IEventServices {
     public Logistics addAffectLog(Logistics logistics, String descriptionEvent);
     public List<Logistics> getLogisticsDates(LocalDate date_debut, LocalDate date_fin);
     public void calculCout();
+
+    List<Logistics> retrieveAllLogistics();
+
+    Logistics retrieveLogistics(int id);
+
+    Logistics addLogistics(Logistics logistics);
+
+    void deleteLogistics(int id);
+
+    Logistics updateLogistics(Logistics logistics);
 }

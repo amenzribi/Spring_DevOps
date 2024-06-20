@@ -117,4 +117,28 @@ public class EventServicesImpl implements IEventServices{
         }
     }
 
+
+
+
+    @Override
+    public List<Logistics> retrieveAllLogistics() {
+        return logisticsRepository.findAll();
+    }
+    @Override
+    public Logistics retrieveLogistics(int id) {
+        return logisticsRepository.findById(id).orElse(null);
+    }
+    @Override
+    public Logistics addLogistics(Logistics logistics) {
+        return logisticsRepository.save(logistics);
+    }
+    @Override
+    public void deleteLogistics(int id) {
+        logisticsRepository.deleteById(id);
+    }
+    @Override
+    public Logistics updateLogistics(Logistics logistics) {
+        return logisticsRepository.save(logistics);
+    }
+
 }
